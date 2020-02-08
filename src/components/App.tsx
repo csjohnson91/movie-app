@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/App.css';
 import Header from "./Header";
-import {Container, Row} from 'reactstrap';
+import { Container, Row } from 'reactstrap';
 import SearchBar from "./SearchBar";
 import MovieList from "./MovieList";
 

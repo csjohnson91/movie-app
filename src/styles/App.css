@@ -7,11 +7,11 @@
   $lighterblue: #07364e;
 */
 .app {
-  background-color: #081b23;
-  text-align: center;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  color: #e3f4fc;
-  font-family: 'Lato', sans-serif;
+    background-color: #081b23;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    color: #e3f4fc;
+    font-family: 'Lato', sans-serif;
 }
