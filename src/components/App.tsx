@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from 'logo.svg';
-import '../App.css';
+import '../styles/App.css';
+import Header from "./Header";
+import {Col, Container, Row} from "react-bootstrap";
+import SearchBar from "./SearchBar";
+import MovieList from "./MovieList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Container className="App">
+        <Row>
+          <Col>
+            <Header/>
+            <SearchBar />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <MovieList />
+          </Col>
+        </Row>
+      </Container>
   );
 }
 

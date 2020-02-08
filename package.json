@@ -52,7 +52,6 @@
     "tslint-immutable": "^6.0.1",
     "typescript": "^3.7.5",
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-cli": "^3.3.10"
   }
 }
