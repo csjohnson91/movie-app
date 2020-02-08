@@ -1,0 +1,1 @@
+A simple app to display popular movies from TMDB, display their details, and allow the user to search the database.
