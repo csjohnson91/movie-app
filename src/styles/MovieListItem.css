@@ -1,0 +1,13 @@
+.card-image {
+    max-height: 15rem;
+}
+
+.card-subtitle {
+    font-size: 0.75rem;
+    align-self: flex-start;
+}
+
+.card-body {
+    flex: content;
+    align-content: flex-start;
+}

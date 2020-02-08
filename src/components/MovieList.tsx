@@ -1,16 +1,15 @@
 import * as React from "react";
-import { Col, Row } from "react-bootstrap";
 import MovieListItem from "./MovieListItem";
+import movieInfo from './../movieInfo.json'
 
 const MovieList = () => {
   return (
-    <Col className='wrapper'>
-      <Row><MovieListItem /></Row>
-      <Row><MovieListItem /></Row>
-      <Row><MovieListItem /></Row>
-      <Row><MovieListItem /></Row>
-    </Col>
-  )
+    <div className="movies">
+      {movieInfo.map(movie =>
+        <MovieListItem movieTitle={movie.name} imageSrc={movie.image}/>
+      )}
+    </div>
+  );
 };
 
 export default MovieList;

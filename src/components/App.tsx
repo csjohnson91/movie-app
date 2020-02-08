@@ -1,25 +1,25 @@
 import React from 'react';
 import '../styles/App.css';
 import Header from "./Header";
-import {Col, Container, Row} from "react-bootstrap";
+import {Container, Row} from 'reactstrap';
 import SearchBar from "./SearchBar";
 import MovieList from "./MovieList";
 
 function App() {
   return (
-      <Container className="App">
+    <div className='app'>
+      <Container>
         <Row>
-          <Col>
-            <Header/>
-            <SearchBar />
-          </Col>
+          <Header/>
         </Row>
         <Row>
-          <Col>
-            <MovieList />
-          </Col>
+          <SearchBar/>
+        </Row>
+        <Row>
+          <MovieList/>
         </Row>
       </Container>
+    </div>
   );
 }
 
