@@ -15,3 +15,8 @@
     color: #e3f4fc;
     font-family: 'Lato', sans-serif;
 }
+
+.verticallyPadded {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
