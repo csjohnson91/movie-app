@@ -1,0 +1,11 @@
+.textGreen {
+    color: #01d277;
+    opacity: 1;
+    font-weight: bold;
+}
+
+input.searchBarInput::placeholder {
+    color: #01d277;
+    opacity: 1;
+    font-weight: bold;
+}
