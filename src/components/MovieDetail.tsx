@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import Axios from 'axios'
 
 type MovieInformation = {
@@ -15,6 +16,10 @@ type MovieInformation = {
 type Data = {
   [key: string]: any
 }
+
+const objectIsEmpty = (obj: Data) => {
+  return Object.keys(obj).length === 0 && obj.constructor === Object
+};
 
 const MovieDetail = () => {
   let { movieId } = useParams();
@@ -43,8 +48,9 @@ const MovieDetail = () => {
 
   if (!data) {
     return <div>Loading data from {url}</div>;
+  } else if (objectIsEmpty(data)) {
+    return <div>Whoops! We cannot find this movie! Go <Link to='/'>home</Link> and try again</div>
   } else {
-
     const movieInfo: MovieInformation = {
       title: data.title,
       releaseDate: data.release_date,
@@ -61,7 +67,7 @@ const MovieDetail = () => {
       <p>{movieInfo.releaseDate} - {movieInfo.userScore}/10 -{movieInfo.runtime}m</p>
       <h3>Overview</h3>
       <p>{movieInfo.overview}</p>
-    </div>;
+    </div>
   }
 };
 
