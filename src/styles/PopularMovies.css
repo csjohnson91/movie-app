@@ -1,0 +1,12 @@
+.movie-list-col {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    flex-direction: column;
+}
+
+.movie-list-title {
+    align-items: flex-start;
+    font-size: x-large;
+    font-weight: bold;
+}

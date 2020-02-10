@@ -1,13 +1,28 @@
-.card-image {
-    max-height: 15rem;
+a {
+    text-decoration: none !important;
 }
 
-.card-subtitle {
+.movie-card-image {
+    max-width: 200px;
+    border-radius: 10px !important;
+}
+
+.movie-card-title {
+    margin-bottom: 0.5rem !important;
+    line-height: 1.2rem;
+}
+
+.movie-card-subtitle {
     font-size: 0.75rem;
-    align-self: flex-start;
+    color: #7fa3b5;
 }
 
-.card-body {
-    flex: content;
-    align-content: flex-start;
+.movie-card-body {
+    padding: 0 !important;
+    color: #e3f4fc;
+}
+
+.movie-card {
+    background-color: transparent !important;
+    width: 10rem;
 }

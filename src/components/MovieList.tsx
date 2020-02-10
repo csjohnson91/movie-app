@@ -9,7 +9,7 @@ const MovieList = () => {
   return (
     <Switch>
       <Route exact path='/'>
-        <Row className='movieListRow'>
+        <Row className='movie-list-row'>
         <PopularMovies />
         </Row>
       </Route>
