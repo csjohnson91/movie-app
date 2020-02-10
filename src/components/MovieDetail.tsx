@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import { Spinner } from "reactstrap";
-import { getMovieDetailUrl, fetchMovieDetailsAndUpdateState, getImageUrl } from '../fetcher/tmdbFetcher'
+import { getMovieDetailUrl, fetchMovieDetailsAndUpdateState, getImageUrl } from '../utility/tmdbFetcher'
+import { objectIsEmpty } from "../utility/utilities";
 
 type MovieInformation = {
   title: string,
@@ -14,10 +15,6 @@ type MovieInformation = {
   backdropPath: string
 }
 
-const objectIsEmpty = (obj: Data) => {
-  return obj != null && Object.keys(obj).length === 0 && obj.constructor === Object
-};
-
 const MovieDetail = () => {
   let { movieId }: UrlParams = useParams();
   const [data, setData] = useState<Data>(null);
@@ -26,7 +23,7 @@ const MovieDetail = () => {
   useEffect(() => fetchMovieDetailsAndUpdateState(setData, url), [url]);
 
   if (!data) {
-    return <Spinner />;
+    return <Spinner/>;
   } else if (objectIsEmpty(data)) {
     return <div>Whoops! We cannot find this movie! Go <Link to='/'>home</Link> and try again</div>
   } else {
@@ -40,13 +37,15 @@ const MovieDetail = () => {
       backdropPath: data.backdrop_path
     };
 
-    return <div>
-      <h1>{movieInfo.title}</h1>
-      <img src={getImageUrl(movieInfo.posterPath, 200)} alt={`${movieInfo.title}-poster`}/>
-      <p>{movieInfo.releaseDate} - {movieInfo.userScore}/10 -{movieInfo.runtime}m</p>
-      <h3>Overview</h3>
-      <p>{movieInfo.overview}</p>
-    </div>
+    return (
+      <div>
+        <h1>{movieInfo.title}</h1>
+        <img src={getImageUrl(movieInfo.posterPath, 200)} alt={`${movieInfo.title}-poster`}/>
+        <p>{movieInfo.releaseDate} - {movieInfo.userScore}/10 -{movieInfo.runtime}m</p>
+        <h3>Overview</h3>
+        <p>{movieInfo.overview}</p>
+      </div>
+    )
   }
 };
 
