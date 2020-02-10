@@ -17,7 +17,7 @@ const SearchBar = () => {
             //onChange={this.handleInputChange}
           />
           <InputGroupAddon addonType='append'>
-            <Button ><FaSearch className='textGreen'/></Button>
+            <Button color='link' className='search-bar-button'><FaSearch className='green-text'/></Button>
           </InputGroupAddon>
     </InputGroup>
   )

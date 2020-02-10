@@ -25,4 +25,5 @@ a {
 .movie-card {
     background-color: transparent !important;
     width: 10rem;
+    padding-bottom: 0.5rem;
 }
