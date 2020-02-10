@@ -14,14 +14,6 @@ type MovieInformation = {
   backdropPath: string
 }
 
-type Data = {
-  [key: string]: any
-} | null
-
-type UrlParams = {
-  [key: string]: string | number
-}
-
 const objectIsEmpty = (obj: Data) => {
   return obj != null && Object.keys(obj).length === 0 && obj.constructor === Object
 };
