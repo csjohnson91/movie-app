@@ -9,7 +9,7 @@ const IMAGE_URL = 'https://image.tmdb.org/t/p';
 
 type ImageWidth = 200 | 300 | 400 | 500 | 780
 
-export const fetchMovieDetailsAndUpdateState = (stateSetter: Function, url: string) => {
+export const fetchDataAndSetState = (stateSetter: Function, url: string) => {
   let mounted = true;
 
   const loadData = async () => {
@@ -38,6 +38,6 @@ export const getSearchUrl = (searchQuery: string) => {
   return `${API_URL}/${SEARCH_PATH}?query${searchQuery}&api_key=${API_KEY}`
 };
 
-export const getpopularMovieUrl = () => {
-  return `${API_URL}/${POPULAR_PATH}?sort_by=popularity.desc&page=1&api_key=${API_KEY}`
+export const getPopularMovieUrl = (page: number) => {
+  return `${API_URL}/${POPULAR_PATH}?sort_by=popularity.desc&page=${page.toString()}&api_key=${API_KEY}`
 };

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import { Spinner } from "reactstrap";
-import { getMovieDetailUrl, fetchMovieDetailsAndUpdateState, getImageUrl } from '../utility/tmdbFetcher'
+import { getMovieDetailUrl, fetchDataAndSetState, getImageUrl } from '../utility/tmdbFetcher'
 import { objectIsEmpty } from "../utility/utilities";
 
 type MovieInformation = {
@@ -20,7 +20,7 @@ const MovieDetail = () => {
   const [data, setData] = useState<Data>(null);
 
   const url = getMovieDetailUrl(movieId);
-  useEffect(() => fetchMovieDetailsAndUpdateState(setData, url), [url]);
+  useEffect(() => fetchDataAndSetState(setData, url), [url]);
 
   if (!data) {
     return <Spinner/>;
