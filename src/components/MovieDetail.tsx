@@ -39,7 +39,6 @@ const MovieDetail = () => {
       backdropPath: data.backdrop_path
     };
 
-    // TODO: maybe use Color Thief to tint backdrop with dominant colour
     return (
       <Container>
         <Row>

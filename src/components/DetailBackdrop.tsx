@@ -8,7 +8,7 @@ type DetailBackdrop = {
 
 const DetailBackdrop = ({ height, src, alt }: DetailBackdrop) => {
   return (
-    <div style={{ height: height, overflow: 'hidden' }}>
+    <div style={{ opacity: '50%', height: height, overflow: 'hidden' }}>
       <img src={src} alt={alt}/>
     </div>
   )
