@@ -5,18 +5,21 @@
 }
 
 .overview-heading {
-    margin-top: 10px;
+    margin-top: 25px;
 }
 
 .overview-text {
     text-align: left;
+    font-weight: lighter;
 }
 
 .poster-col {
     margin-top: -50px;
+    padding-right: 0;
 }
 
 .details-col {
+    padding-left: 0;
     margin-top: 1rem;
 }
 
@@ -24,4 +27,19 @@
     border-radius: 20px;
     box-shadow: 0 0 15px 5px #000;
     max-width: 70%;
+}
+
+.title {
+    text-align: left;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.info {
+    font-size: small;
+    opacity: 75%;
+}
+
+.runtime {
+    margin-top: -15px;
 }

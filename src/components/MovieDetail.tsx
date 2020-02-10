@@ -17,6 +17,13 @@ type MovieInformation = {
   backdropPath: string
 }
 
+const convertMinutesToHoursAndMinutes = (totalMinutes: number) => {
+  const hours = totalMinutes / 60 | 0;
+  const minutes = totalMinutes % 60 | 0;
+
+  return `${hours}h ${minutes}m`
+};
+
 const MovieDetail = () => {
   let { movieId }: UrlParams = useParams();
   const [data, setData] = useState<Data>(null);
@@ -54,10 +61,13 @@ const MovieDetail = () => {
           </Col>
           <Col xs='7' md='8' className='details-col' >
             <Row>
-              <h1>{movieInfo.title}</h1>
+              <div className='title'>{movieInfo.title}</div>
             </Row>
             <Row>
-              <p>{movieInfo.releaseDate} - {movieInfo.userScore}/10 -{movieInfo.runtime}m</p>
+              <p className='info'>{movieInfo.releaseDate} - {movieInfo.userScore}/10</p>
+            </Row>
+            <Row>
+              <p className='info runtime'>{convertMinutesToHoursAndMinutes(movieInfo.runtime)}</p>
             </Row>
           </Col>
         </Row>
