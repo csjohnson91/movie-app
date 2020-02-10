@@ -1,0 +1,27 @@
+.overview-row-border {
+    margin-top: 2rem;
+    border-top: 1px solid #e3f4fc;
+    opacity: 25%;
+}
+
+.overview-heading {
+    margin-top: 10px;
+}
+
+.overview-text {
+    text-align: left;
+}
+
+.poster-col {
+    margin-top: -50px;
+}
+
+.details-col {
+    margin-top: 1rem;
+}
+
+.poster-image {
+    border-radius: 20px;
+    box-shadow: 0 0 15px 5px #000;
+    max-width: 70%;
+}

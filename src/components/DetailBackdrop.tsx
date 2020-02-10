@@ -7,7 +7,11 @@ type DetailBackdrop = {
 }
 
 const DetailBackdrop = ({ height, src, alt }: DetailBackdrop) => {
-  return <div style={{ height: height, overflow: 'hidden' }}><img src={src} alt={alt} /></div>
+  return (
+    <div style={{ height: height, overflow: 'hidden' }}>
+      <img src={src} alt={alt}/>
+    </div>
+  )
 };
 
 export default DetailBackdrop
