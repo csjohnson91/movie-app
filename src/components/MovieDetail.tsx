@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom'
-import Axios from 'axios'
 import { Spinner } from "reactstrap";
+import { getMovieDetailUrl, fetchMovieDetailsAndUpdateState } from '../fetcher/tmdbFetcher'
 
 type MovieInformation = {
   title: string,
@@ -18,33 +18,20 @@ type Data = {
   [key: string]: any
 } | null
 
+type UrlParams = {
+  [key: string]: string | number
+}
+
 const objectIsEmpty = (obj: Data) => {
   return obj != null && Object.keys(obj).length === 0 && obj.constructor === Object
 };
 
 const MovieDetail = () => {
-  let { movieId } = useParams();
-  const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=6ed12e064b90ae1290fa326ce9e790ff`;
+  let { movieId }: UrlParams = useParams();
   const [data, setData] = useState<Data>(null);
 
-  useEffect(() => {
-     let mounted = true;
-
-      const loadData = async () => {
-        const response = await Axios.get(url);
-        if (mounted) {
-          setData(response.data);
-        }
-      };
-
-      loadData();
-
-      return () => {
-        mounted = false;
-      };
-    },
-    [url]
-  );
+  const url = getMovieDetailUrl(movieId);
+  useEffect(() => fetchMovieDetailsAndUpdateState(setData, url), [url]);
 
   if (!data) {
     return <Spinner />;
