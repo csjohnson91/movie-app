@@ -2,9 +2,9 @@ import * as React from "react";
 import { Card, CardBody, CardImg, CardSubtitle, CardTitle } from "reactstrap";
 import './../styles/MovieListItem.css'
 import { Link } from "react-router-dom";
-import * as moment from 'moment';
 import { getPosterUrl } from "../utility/tmdbFetcher";
 import UserRatingBadge from "./UserRatingBadge";
+import { getMonthAndYearFromDate } from "../utility/utilities";
 
 type MovieListItemProps = {
   title: string,
@@ -12,12 +12,6 @@ type MovieListItemProps = {
   id: number,
   releaseDate: string
   rating: string
-};
-
-const getMonthAndYearFromDate = (date: string) => {
-  // @ts-ignore
-  const parsedDate = moment(date, 'YYYY-MM-DD');
-  return parsedDate.format('MMMM YYYY')
 };
 
 

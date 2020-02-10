@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import { Col, Container, Row, Spinner } from "reactstrap";
 import { getMovieDetailUrl, fetchDataAndSetState, getPosterUrl, getBackDropUrl } from '../utility/tmdbFetcher'
-import { objectIsEmpty } from "../utility/utilities";
+import { getYearFromDate, objectIsEmpty } from "../utility/utilities";
 import DetailBackdrop from "./DetailBackdrop";
 import '../styles/MovieDetail.css'
 
@@ -21,7 +21,7 @@ const convertMinutesToHoursAndMinutes = (totalMinutes: number) => {
   const hours = totalMinutes / 60 | 0;
   const minutes = totalMinutes % 60 | 0;
 
-  return `${hours}h ${minutes}m`
+  return `${hours}h ${minutes}min`
 };
 
 const MovieDetail = () => {
@@ -57,17 +57,25 @@ const MovieDetail = () => {
         </Row>
         <Row>
           <Col xs='5' md='4' className='poster-col'>
-            <img className='poster-image' src={getPosterUrl(movieInfo.posterPath, 185)} alt={`${movieInfo.title}-poster`}/>
+            <img
+              className='poster-image'
+              src={getPosterUrl(movieInfo.posterPath, 185)}
+              alt={`${movieInfo.title}-poster`}
+            />
           </Col>
           <Col xs='7' md='8' className='details-col' >
             <Row>
               <div className='title'>{movieInfo.title}</div>
             </Row>
             <Row>
-              <p className='info'>{movieInfo.releaseDate} - {movieInfo.userScore}/10</p>
+              <p className='info'>
+                {getYearFromDate(movieInfo.releaseDate)} - {movieInfo.userScore * 10}% User Score
+              </p>
             </Row>
             <Row>
-              <p className='info runtime'>{convertMinutesToHoursAndMinutes(movieInfo.runtime)}</p>
+              <p className='info runtime'>
+                {convertMinutesToHoursAndMinutes(movieInfo.runtime)}
+              </p>
             </Row>
           </Col>
         </Row>
