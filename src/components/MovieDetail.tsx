@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import { Spinner } from "reactstrap";
-import { getMovieDetailUrl, fetchMovieDetailsAndUpdateState } from '../fetcher/tmdbFetcher'
+import { getMovieDetailUrl, fetchMovieDetailsAndUpdateState, getImageUrl } from '../fetcher/tmdbFetcher'
 
 type MovieInformation = {
   title: string,
@@ -42,7 +42,7 @@ const MovieDetail = () => {
 
     return <div>
       <h1>{movieInfo.title}</h1>
-      <img src={`https://image.tmdb.org/t/p/w200${movieInfo.posterPath}`} alt={`${movieInfo.title}-poster`}/>
+      <img src={getImageUrl(movieInfo.posterPath, 200)} alt={`${movieInfo.title}-poster`}/>
       <p>{movieInfo.releaseDate} - {movieInfo.userScore}/10 -{movieInfo.runtime}m</p>
       <h3>Overview</h3>
       <p>{movieInfo.overview}</p>

@@ -5,6 +5,9 @@ const MOVIE_DETAIL_PATH = 'movie';
 const SEARCH_PATH = 'search/movie';
 const POPULAR_PATH = 'discover/movie';
 const API_KEY = '6ed12e064b90ae1290fa326ce9e790ff';
+const IMAGE_URL = 'https://image.tmdb.org/t/p';
+
+type ImageWidth = 200 | 300 | 400 | 500 | 780
 
 export const fetchMovieDetailsAndUpdateState = (stateSetter: Function, url: string) => {
   let mounted = true;
@@ -21,6 +24,10 @@ export const fetchMovieDetailsAndUpdateState = (stateSetter: Function, url: stri
   return () => {
     mounted = false;
   };
+};
+
+export const getImageUrl = (imagePath: string, width: ImageWidth) => {
+  return `${IMAGE_URL}/w${width.toString()}/${imagePath}`
 };
 
 export const getMovieDetailUrl = (movieId: string) => {
