@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import Axios from 'axios'
+import { Spinner } from "reactstrap";
 
 type MovieInformation = {
   title: string,
@@ -15,19 +16,18 @@ type MovieInformation = {
 
 type Data = {
   [key: string]: any
-}
+} | null
 
 const objectIsEmpty = (obj: Data) => {
-  return Object.keys(obj).length === 0 && obj.constructor === Object
+  return obj != null && Object.keys(obj).length === 0 && obj.constructor === Object
 };
 
 const MovieDetail = () => {
   let { movieId } = useParams();
   const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=6ed12e064b90ae1290fa326ce9e790ff`;
-  const [data, setData] = useState<Data>({});
+  const [data, setData] = useState<Data>(null);
 
-  useEffect(
-    () => {
+  useEffect(() => {
      let mounted = true;
 
       const loadData = async () => {
@@ -47,7 +47,7 @@ const MovieDetail = () => {
   );
 
   if (!data) {
-    return <div>Loading data from {url}</div>;
+    return <Spinner />;
   } else if (objectIsEmpty(data)) {
     return <div>Whoops! We cannot find this movie! Go <Link to='/'>home</Link> and try again</div>
   } else {
