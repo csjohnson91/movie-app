@@ -26,12 +26,13 @@ const PopularMovies = () => {
       </Row>
       <Row>
         {movies.map(movie => (
-          <Col>
+          <Col className='movie-list-col'>
             <MovieListItem
               title={movie.title}
               posterPath={movie.poster_path}
               id={movie.id}
               releaseDate={movie.release_date}
+              rating={movie.vote_average}
             />
           </Col>
         ))}

@@ -1,0 +1,15 @@
+.positive-badge {
+    background-color: #01d277 !important;
+}
+
+span.badge.average-badge {
+    background-color: #4902a3;
+}
+
+span.poor-badge {
+    background-color: #d1225b;
+}
+
+span.badge-primary {
+    background-color: #01d277 !important;
+}

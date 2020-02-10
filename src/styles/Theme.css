@@ -1,0 +1,14 @@
+.badge-primary {
+    background-color: #01d277;
+    color: white;
+}
+
+.badge-warning {
+    background-color: #4902a3;
+    color: white;
+}
+
+.badge-danger {
+    background-color: #d1225b;
+    color: white;
+}

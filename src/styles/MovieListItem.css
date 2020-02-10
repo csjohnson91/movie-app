@@ -5,6 +5,7 @@ a {
 .movie-card-image {
     max-width: 200px;
     border-radius: 10px !important;
+    position: relative;
 }
 
 .movie-card-title {
@@ -26,4 +27,11 @@ a {
     background-color: transparent !important;
     width: 10rem;
     padding-bottom: 0.5rem;
+}
+
+.movie-card-rating {
+    margin-bottom: -2rem;
+    margin-left: 1rem;
+    position: relative;
+    z-index: 1;
 }
