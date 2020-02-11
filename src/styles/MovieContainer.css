@@ -6,3 +6,10 @@
 .movie-list-row {
     padding-top: 3px;
 }
+
+.movie-list-col {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    flex-direction: column;
+}

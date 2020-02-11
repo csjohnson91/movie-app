@@ -1,11 +1,11 @@
 import React from 'react';
 import '../styles/App.css';
-import MovieList from "./MovieList";
+import MovieContainer from "./MovieContainer";
 
 const App = () => {
   return (
     <div className='app'>
-      <MovieList/>
+      <MovieContainer/>
     </div>
   );
 };

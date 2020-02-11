@@ -2,14 +2,14 @@ import * as React from "react";
 import { Switch, Route } from "react-router-dom";
 import MovieDetail from "./MovieDetail";
 import { Col, Container, Row } from "reactstrap";
-import './../styles/MovieList.css'
+import './../styles/MovieContainer.css'
 import PopularMovies from "./PopularMovies";
 import Header from "./Header";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 import { fetchDataAndSetState, getSearchUrl } from "../utility/tmdbFetcher";
 
-const MovieList = () => {
+const MovieContainer = () => {
   const [searchResults, setSearchResults] = useState<Data>(null);
 
   const handleSearch = (query: string) => {
@@ -46,4 +46,4 @@ const MovieList = () => {
   );
 };
 
-export default MovieList;
+export default MovieContainer;
