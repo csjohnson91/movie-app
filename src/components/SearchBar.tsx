@@ -3,7 +3,16 @@ import { Button, Input, InputGroup, InputGroupAddon } from "reactstrap";
 import { FaSearch } from "react-icons/fa";
 import './../styles/SearchBar.css'
 
-const SearchBar = () => {
+type SearchBarProps = {
+  callBack: Function
+}
+
+const SearchBar = ({ callBack }: SearchBarProps) => {
+
+  const handleChange = (event: {[key: string]: any}) => {
+    callBack(event.target.value)
+  };
+
   return (
     <InputGroup>
           <Input
@@ -12,9 +21,7 @@ const SearchBar = () => {
             type='search'
             name='search'
             id='searchBar'
-            // TODO: make functional AND pretty
-            //value={this.state.query}
-            //onChange={this.handleInputChange}
+            onChange={handleChange}
           />
           <InputGroupAddon addonType='append'>
             <Button color='link' className='search-bar-button'><FaSearch className='green-text'/></Button>

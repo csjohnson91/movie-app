@@ -1,3 +1,8 @@
+.verticallyPadded {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
 .movie-list-row {
     padding-top: 3px;
 }
