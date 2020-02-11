@@ -1,0 +1,16 @@
+.back-button {
+    position: absolute;
+    top: 1rem;
+    margin-left: 2rem;
+    color: #e3f4fc;
+}
+
+.backdrop-container {
+    position: relative;
+    width: 100%;
+    top: 0;
+}
+
+svg:hover {
+    color: #818181;
+}
