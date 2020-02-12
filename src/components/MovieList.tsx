@@ -20,8 +20,8 @@ const MovieList = ({ movies }: MovieListProps) => {
       </Col>
     </Row>
     <Row>
-      {movies.map(movie => (
-        <Col className='movie-list-col'>
+      {movies.map((movie, index) => (
+        <Col className='movie-list-col' key={`MovieListCol-${index}`}>
           <MovieListItem
             title={movie.title}
             posterPath={movie.poster_path}
