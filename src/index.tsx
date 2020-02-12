@@ -6,11 +6,12 @@ import './styles/index.css';
 import App from './components/App';
 import './../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './styles/Theme.css'
-import { BrowserRouter } from "react-router-dom";
+import { Router } from "react-router-dom";
+import history from './history'
 
 ReactDOM.render(
-  <BrowserRouter>
+  <Router history={history}>
     <App/>
-  </BrowserRouter>,
+  </Router>,
   document.getElementById('root')
 );

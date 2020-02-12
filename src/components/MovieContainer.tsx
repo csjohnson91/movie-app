@@ -6,29 +6,12 @@ import './../styles/MovieContainer.css'
 import PopularMovies from "./PopularMovies";
 import Header from "./Header";
 import SearchBar from "./SearchBar";
-import { useEffect, useState } from "react";
-import { getSearchUrl } from "../utility/tmdbFetcher";
-import Axios from "axios";
+import history from '../history'
+import SearchResults from "./SearchResults";
 
 const MovieContainer = () => {
-  const [query, setQuery] = useState<string>('');
-  const [data, setData] = useState<Data>({});
-
-  useEffect(() => {
-      if (query !== '') {
-        const fetchData = async () => {
-          const url = getSearchUrl(query);
-          const result = await Axios(url);
-          setData(result.data);
-        };
-
-        fetchData();
-      }
-    }, [query]
-  );
-
   const handleSearch = (query: string) => {
-    setQuery(query)
+    history.push(`/search/${query}`)
   };
 
   return (
@@ -43,17 +26,18 @@ const MovieContainer = () => {
           <Row>
             <Col sm="12" md={{ size: 6, offset: 3 }} className='verticallyPadded'>
               <SearchBar onSearch={handleSearch}/>
-              <p>{JSON.stringify(data)}</p>
             </Col>
           </Row>
           <Row className='movie-list-row'>
             <PopularMovies/>
           </Row>
         </Route>
-        <Route path={'/:movieId'}>
+        <Route path={'/movie/:movieId'}>
           <MovieDetail/>
         </Route>
-
+        <Route path={'/search/:query'}>
+          <SearchResults />
+        </Route>
       </Switch>
     </Container>
   );
