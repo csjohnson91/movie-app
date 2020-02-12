@@ -41,7 +41,7 @@ export const getMovieDetailUrl = (movieId: string) => {
 };
 
 export const getSearchUrl = (searchQuery: string) => {
-  return `${API_URL}/${SEARCH_PATH}?query=${searchQuery}&api_key=${API_KEY}`
+  return `${API_URL}/${SEARCH_PATH}?query=${searchQuery}&api_key=${API_KEY}&include_adult=false`
 };
 
 export const getPopularMovieUrl = (page: number) => {
