@@ -5,7 +5,7 @@ import MissingBackdrop from '../images/missing-backdrop.png'
 const API_URL = 'https://api.themoviedb.org/3';
 const MOVIE_DETAIL_PATH = 'movie';
 const SEARCH_PATH = 'search/movie';
-const POPULAR_PATH = 'discover/movie';
+const DISCOVER_PATH = 'discover/movie';
 const API_KEY = '6ed12e064b90ae1290fa326ce9e790ff';
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p';
 
@@ -54,5 +54,5 @@ export const getSearchUrl = (searchQuery: string) => {
 };
 
 export const getPopularMovieUrl = (page: number) => {
-  return `${API_URL}/${POPULAR_PATH}?sort_by=popularity.desc&page=${page.toString()}&api_key=${API_KEY}`
+  return `${API_URL}/${DISCOVER_PATH}?sort_by=popularity.desc&page=${page.toString()}&api_key=${API_KEY}`
 };
