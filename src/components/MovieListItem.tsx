@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Card, CardBody, CardImg, CardSubtitle, CardTitle } from 'reactstrap';
 import './../styles/MovieListItem.css'
 import { Link } from 'react-router-dom';
-import { getPosterUrl } from '../utility/tmdbFetcher';
+import { getPosterUrl } from '../utility/urlConstructor';
 import UserRatingBadge from './UserRatingBadge';
 import { getMonthAndYearFromDate } from '../utility/utilities';
 

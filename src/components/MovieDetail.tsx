@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import { Col, Container, Row, Spinner } from 'reactstrap';
-import { getMovieDetailUrl, fetchDataAndSetState, getPosterUrl, getBackDropUrl } from '../utility/tmdbFetcher'
+import { getMovieDetailUrl, getPosterUrl, getBackDropUrl } from '../utility/urlConstructor'
 import { getYearFromDate, objectIsEmpty } from '../utility/utilities';
 import DetailBackdrop from './DetailBackdrop';
 import '../styles/MovieDetail.css'
+import Axios from 'axios';
 
 type MovieInformation = {
   title: string,
@@ -26,23 +27,32 @@ const convertMinutesToHoursAndMinutes = (totalMinutes: number) => {
 
 const MovieDetail = () => {
   let { movieId }: UrlParams = useParams();
-  const [data, setData] = useState<Data>(null);
+  const [movieData, setMovieData] = useState<Data>(null);
   const url = getMovieDetailUrl(movieId);
-  useEffect(() => fetchDataAndSetState(setData, url), [url]);
 
-  if (!data) {
+  useEffect(() => {
+      const fetchData = async () => {
+        const response = await Axios(url);
+        setMovieData(response.data);
+      };
+      fetchData();
+
+    }, [url]
+  );
+
+  if (!movieData) {
     return <Spinner/>;
-  } else if (objectIsEmpty(data)) {
+  } else if (objectIsEmpty(movieData)) {
     return <div>Whoops! We cannot find this movie! Go <Link to='/'>home</Link> and try again</div>
   } else {
     const movieInfo: MovieInformation = {
-      title: data.title,
-      releaseDate: data.release_date,
-      userScore: data.vote_average,
-      runtime: data.runtime,
-      overview: data.overview,
-      posterPath: data.poster_path,
-      backdropPath: data.backdrop_path
+      title: movieData.title,
+      releaseDate: movieData.release_date,
+      userScore: movieData.vote_average,
+      runtime: movieData.runtime,
+      overview: movieData.overview,
+      posterPath: movieData.poster_path,
+      backdropPath: movieData.backdrop_path
     };
 
     return (

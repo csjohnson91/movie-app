@@ -1,4 +1,3 @@
-import Axios from 'axios';
 import MissingPoster from '../images/missing-poster.png'
 import MissingBackdrop from '../images/missing-backdrop.png'
 
@@ -9,27 +8,9 @@ const DISCOVER_PATH = 'discover/movie';
 const API_KEY = '6ed12e064b90ae1290fa326ce9e790ff';
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p';
 
-
 // based on options from TMDB's configuration endpoint
 type BackdropSize = 300 | 780 | 1280 | 'original'
 type PosterSize = 92 | 154 | 185 | 342 | 500 | 780 | 'original'
-
-export const fetchDataAndSetState = (stateSetter: Function, url: string) => {
-  let mounted = true;
-
-  const loadData = async () => {
-    const response = await Axios.get(url);
-    if (mounted) {
-      stateSetter(response.data);
-    }
-  };
-
-  loadData();
-
-  return () => {
-    mounted = false;
-  };
-};
 
 export const getPosterUrl = (imagePath: string | null, size: PosterSize) => {
   if (imagePath == null) {

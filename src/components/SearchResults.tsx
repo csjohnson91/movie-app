@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import { getSearchUrl } from '../utility/tmdbFetcher';
+import { getSearchUrl } from '../utility/urlConstructor';
 import Axios from 'axios';
 import MovieList from './MovieList';
 import { Spinner } from 'reactstrap';
