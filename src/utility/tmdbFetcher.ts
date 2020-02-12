@@ -1,4 +1,6 @@
 import Axios from 'axios';
+import MissingPoster from '../images/missing-poster.png'
+import MissingBackdrop from '../images/missing-backdrop.png'
 
 const API_URL = 'https://api.themoviedb.org/3';
 const MOVIE_DETAIL_PATH = 'movie';
@@ -6,6 +8,7 @@ const SEARCH_PATH = 'search/movie';
 const POPULAR_PATH = 'discover/movie';
 const API_KEY = '6ed12e064b90ae1290fa326ce9e790ff';
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p';
+
 
 // based on options from TMDB's configuration endpoint
 type BackdropSize = 300 | 780 | 1280 | 'original'
@@ -28,11 +31,17 @@ export const fetchDataAndSetState = (stateSetter: Function, url: string) => {
   };
 };
 
-export const getPosterUrl = (imagePath: string, size: PosterSize) => {
+export const getPosterUrl = (imagePath: string | null, size: PosterSize) => {
+  if (imagePath == null) {
+    return MissingPoster
+  }
   return `${IMAGE_BASE_URL}/w${size.toString()}${imagePath}`
 };
 
-export const getBackDropUrl = (imagePath: string, width: BackdropSize) => {
+export const getBackDropUrl = (imagePath: string | null, width: BackdropSize) => {
+  if (imagePath == null) {
+    return MissingBackdrop
+  }
   return `${IMAGE_BASE_URL}/w${width.toString()}${imagePath}`
 };
 

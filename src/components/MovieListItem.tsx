@@ -8,7 +8,7 @@ import { getMonthAndYearFromDate } from '../utility/utilities';
 
 type MovieListItemProps = {
   title: string,
-  posterPath: string,
+  posterPath: string | null,
   id: number,
   releaseDate: string
   rating: string
@@ -22,7 +22,7 @@ const truncateTitle = (title: string) => {
   }
   return title
 };
-// TODO: placeholder poster image
+
 const MovieListItem = ({ title, posterPath, id, releaseDate, rating }: MovieListItemProps) => {
   return (
     <Link to={`/movie/${id}`}>
