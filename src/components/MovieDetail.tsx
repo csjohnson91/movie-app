@@ -27,7 +27,6 @@ const convertMinutesToHoursAndMinutes = (totalMinutes: number) => {
 const MovieDetail = () => {
   let { movieId }: UrlParams = useParams();
   const [data, setData] = useState<Data>(null);
-
   const url = getMovieDetailUrl(movieId);
   useEffect(() => fetchDataAndSetState(setData, url), [url]);
 

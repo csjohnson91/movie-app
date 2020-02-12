@@ -17,7 +17,7 @@ const PopularMovies = () => {
     return <div>Whoops! Something is very wrong! Go <Link to='/'>home</Link> and try again</div>
   } else {
     const movies: Array<{ [key: string]: any }> = data.results;
-    return <MovieList movies={movies}/>
+    return <MovieList listTitle='Popular Movies' movies={movies}/>
   }
 };
 

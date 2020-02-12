@@ -22,10 +22,10 @@ const truncateTitle = (title: string) => {
   }
   return title
 };
-
+// TODO: placeholder poster image
 const MovieListItem = ({ title, posterPath, id, releaseDate, rating }: MovieListItemProps) => {
   return (
-    <Link to={`movie/${id}`}>
+    <Link to={`/movie/${id}`}>
       <Card className='text-left movie-card'>
         <div className='movie-card-rating'><UserRatingBadge>{rating}</UserRatingBadge></div>
         <CardImg className='movie-card-image' variant="top" src={getPosterUrl(posterPath, 185)}/>

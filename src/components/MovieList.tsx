@@ -6,17 +6,18 @@ import '../styles/MovieList.css'
 
 type MovieListProps = {
   movies: Array<{ [key: string]: any }>
+  listTitle: string
 }
 
-const MovieList = ({ movies }: MovieListProps) => {
-  if (objectIsEmpty(movies)) {
+const MovieList = ({ movies, listTitle }: MovieListProps) => {
+  if (!movies || objectIsEmpty(movies)) {
     return <div>No movies to display.</div>
   }
 
   return <Container>
     <Row>
       <Col className='movie-list-col movie-list-title'>
-        Popular Movies
+        {listTitle}
       </Col>
     </Row>
     <Row>
