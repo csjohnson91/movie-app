@@ -2,6 +2,7 @@ import React, { CSSProperties } from 'react'
 import { FaArrowLeft } from 'react-icons/fa';
 import '../styles/DetailBackdrop.css'
 import { Link } from 'react-router-dom';
+import history from '../history';
 
 type DetailBackdrop = {
   height: number
@@ -22,7 +23,7 @@ const DetailBackdrop = ({ height, src, alt }: DetailBackdrop) => {
       <div style={imageStyle}>
         <img src={src} alt={alt}/>
       </div>
-      <Link to='/'>
+      <Link onClick={history.goBack} to='/'>
         <div className='back-button'><FaArrowLeft/></div>
       </Link>
     </div>
