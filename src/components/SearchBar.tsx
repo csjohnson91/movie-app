@@ -17,6 +17,13 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
     onSearch(state)
   };
 
+  const handleKeyPress = (event: any) => {
+    if (event.key === "Enter") {
+      return onSearch(state)
+    }
+    return
+  };
+
   return (
     <InputGroup>
       <Input
@@ -26,6 +33,7 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
         name='search'
         id='searchBar'
         onChange={(e) => setState(e.target.value)}
+        onKeyPress={handleKeyPress}
       />
       <InputGroupAddon addonType='append'>
         <Button color='link' onClick={handleSubmit}>
