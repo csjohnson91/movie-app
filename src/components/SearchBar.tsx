@@ -14,7 +14,9 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    onSearch(state)
+    if (state && state !== '') {
+      onSearch(state)
+    }
   };
 
   const handleKeyPress = (event: any) => {
