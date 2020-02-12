@@ -8,10 +8,6 @@
     border-radius: 20px !important;
 }
 
-.search-bar-button {
-    margin-left: -3rem;
-}
-
 input.searchBarInput::placeholder {
     color: #01d277;
     opacity: 1;

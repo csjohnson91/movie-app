@@ -2,30 +2,36 @@ import * as React from "react";
 import { Button, Input, InputGroup, InputGroupAddon } from "reactstrap";
 import { FaSearch } from "react-icons/fa";
 import './../styles/SearchBar.css'
+import { useState } from "react";
 
 type SearchBarProps = {
-  callBack: Function
+  onSearch: Function
 }
 
-const SearchBar = ({ callBack }: SearchBarProps) => {
+const SearchBar = ({ onSearch }: SearchBarProps) => {
 
-  const handleChange = (event: {[key: string]: any}) => {
-    callBack(event.target.value)
+  const [state, setState] = useState<string>('');
+
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    onSearch(state)
   };
 
   return (
     <InputGroup>
-          <Input
-            className='searchBarInput'
-            placeholder="Search"
-            type='search'
-            name='search'
-            id='searchBar'
-            onChange={handleChange}
-          />
-          <InputGroupAddon addonType='append'>
-            <Button color='link' className='search-bar-button'><FaSearch className='green-text'/></Button>
-          </InputGroupAddon>
+      <Input
+        className='searchBarInput'
+        placeholder="Search"
+        type='search'
+        name='search'
+        id='searchBar'
+        onChange={(e) => setState(e.target.value)}
+      />
+      <InputGroupAddon addonType='append'>
+        <Button color='link' onClick={handleSubmit}>
+          <FaSearch className='green-text'/>
+        </Button>
+      </InputGroupAddon>
     </InputGroup>
   )
 };
