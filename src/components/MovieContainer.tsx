@@ -7,6 +7,7 @@ import PopularMovies from './PopularMovies';
 import history from '../history'
 import SearchResults from './SearchResults';
 import SearchBarHeader from './SearchBarHeader';
+
 const MovieContainer = () => {
   const handleSearch = (query: string) => {
     history.push(`/search/${query}`)

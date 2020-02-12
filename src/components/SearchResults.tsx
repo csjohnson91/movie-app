@@ -23,7 +23,9 @@ const SearchResults = () => {
   if (searchResults == null) {
     return <Spinner/>
   }
-  return <MovieList listTitle='Search Results' numberOfResults={searchResults.total_results} movies={searchResults.results}/>
+  return <MovieList listTitle='Search Results'
+                    numberOfResults={searchResults.total_results}
+                    movies={searchResults.results}/>
 };
 
 export default SearchResults

@@ -18,7 +18,7 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
   };
 
   const handleKeyPress = (event: any) => {
-    if (event.key === "Enter") {
+    if (event.key === 'Enter') {
       return onSearch(state)
     }
     return
