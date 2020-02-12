@@ -3,15 +3,17 @@ import { objectIsEmpty } from '../utility/utilities';
 import { Col, Container, Row } from 'reactstrap';
 import MovieListItem from './MovieListItem';
 import '../styles/MovieList.css'
+import { Link } from 'react-router-dom';
 
 type MovieListProps = {
   movies: Array<{ [key: string]: any }>
-  listTitle: string
+  listTitle: string,
+  numberOfResults: number
 }
 
-const MovieList = ({ movies, listTitle }: MovieListProps) => {
-  if (!movies || objectIsEmpty(movies)) {
-    return <div>No movies to display.</div>
+const MovieList = ({ movies, listTitle, numberOfResults }: MovieListProps) => {
+  if (!movies || objectIsEmpty(movies) || numberOfResults === 0) {
+    return <div>No search results - try another search term or go back <Link color='link' to='/'>home</Link>.</div>
   }
 
   return <Container>
