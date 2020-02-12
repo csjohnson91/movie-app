@@ -1,7 +1,7 @@
 import React, { CSSProperties } from 'react'
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft } from 'react-icons/fa';
 import '../styles/DetailBackdrop.css'
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 type DetailBackdrop = {
   height: number
@@ -22,7 +22,9 @@ const DetailBackdrop = ({ height, src, alt }: DetailBackdrop) => {
       <div style={imageStyle}>
         <img src={src} alt={alt}/>
       </div>
-      <Link to='/'><div className='back-button'><FaArrowLeft /></div></Link>
+      <Link to='/'>
+        <div className='back-button'><FaArrowLeft/></div>
+      </Link>
     </div>
   )
 };

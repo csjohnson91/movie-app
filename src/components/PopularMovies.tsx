@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { Spinner } from "reactstrap";
-import { fetchDataAndSetState, getPopularMovieUrl } from "../utility/tmdbFetcher";
-import { objectIsEmpty } from "../utility/utilities";
+import { Spinner } from 'reactstrap';
+import { fetchDataAndSetState, getPopularMovieUrl } from '../utility/tmdbFetcher';
+import { objectIsEmpty } from '../utility/utilities';
 import { Link } from 'react-router-dom';
-import MovieList from "./MovieList";
+import MovieList from './MovieList';
 
 const PopularMovies = () => {
   const [data, setData] = useState<Data>(null);

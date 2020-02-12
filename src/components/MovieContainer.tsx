@@ -1,13 +1,13 @@
-import * as React from "react";
-import { Switch, Route } from "react-router-dom";
-import MovieDetail from "./MovieDetail";
-import { Col, Container, Row } from "reactstrap";
+import * as React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import MovieDetail from './MovieDetail';
+import { Col, Container, Row } from 'reactstrap';
 import './../styles/MovieContainer.css'
-import PopularMovies from "./PopularMovies";
-import Header from "./Header";
-import SearchBar from "./SearchBar";
+import PopularMovies from './PopularMovies';
+import Header from './Header';
+import SearchBar from './SearchBar';
 import history from '../history'
-import SearchResults from "./SearchResults";
+import SearchResults from './SearchResults';
 
 const MovieContainer = () => {
   const handleSearch = (query: string) => {
@@ -36,7 +36,7 @@ const MovieContainer = () => {
           <MovieDetail/>
         </Route>
         <Route path={'/search/:query'}>
-          <SearchResults />
+          <SearchResults/>
         </Route>
       </Switch>
     </Container>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from "react-router-dom";
-import { getSearchUrl } from "../utility/tmdbFetcher";
-import Axios from "axios";
+import { useParams } from 'react-router-dom';
+import { getSearchUrl } from '../utility/tmdbFetcher';
+import Axios from 'axios';
 
 const SearchResults = () => {
   const [data, setData] = useState<Data>({});

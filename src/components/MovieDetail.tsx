@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom'
-import { Col, Container, Row, Spinner } from "reactstrap";
+import { Col, Container, Row, Spinner } from 'reactstrap';
 import { getMovieDetailUrl, fetchDataAndSetState, getPosterUrl, getBackDropUrl } from '../utility/tmdbFetcher'
-import { getYearFromDate, objectIsEmpty } from "../utility/utilities";
-import DetailBackdrop from "./DetailBackdrop";
+import { getYearFromDate, objectIsEmpty } from '../utility/utilities';
+import DetailBackdrop from './DetailBackdrop';
 import '../styles/MovieDetail.css'
 
 type MovieInformation = {
@@ -63,7 +63,7 @@ const MovieDetail = () => {
               alt={`${movieInfo.title}-poster`}
             />
           </Col>
-          <Col xs='7' md='8' className='details-col' >
+          <Col xs='7' md='8' className='details-col'>
             <Row>
               <div className='title'>{movieInfo.title}</div>
             </Row>

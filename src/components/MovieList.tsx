@@ -1,7 +1,7 @@
 import React from 'react';
-import { objectIsEmpty } from "../utility/utilities";
-import { Col, Container, Row } from "reactstrap";
-import MovieListItem from "./MovieListItem";
+import { objectIsEmpty } from '../utility/utilities';
+import { Col, Container, Row } from 'reactstrap';
+import MovieListItem from './MovieListItem';
 import '../styles/MovieList.css'
 
 type MovieListProps = {

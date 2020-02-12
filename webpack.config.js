@@ -1,6 +1,6 @@
 const path = require('path'),
   webpack = require('webpack'),
-  HtmlWebpackPlugin = require('html-webpack-plugin');
+  HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -21,7 +21,7 @@ module.exports = {
         test: /\.(ts|tsx)$/,
         loader: 'babel-loader'
       },
-      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
+      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' }
     ]
   },
   plugins: [

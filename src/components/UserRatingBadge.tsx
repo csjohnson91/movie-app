@@ -1,5 +1,5 @@
 import React from 'react'
-import { Badge } from "reactstrap";
+import { Badge } from 'reactstrap';
 
 type UserRatingBadgeProps = {
   children: string

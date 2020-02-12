@@ -1,8 +1,8 @@
-import * as React from "react";
-import { Button, Input, InputGroup, InputGroupAddon } from "reactstrap";
-import { FaSearch } from "react-icons/fa";
+import * as React from 'react';
+import { Button, Input, InputGroup, InputGroupAddon } from 'reactstrap';
+import { FaSearch } from 'react-icons/fa';
 import './../styles/SearchBar.css'
-import { useState } from "react";
+import { useState } from 'react';
 
 type SearchBarProps = {
   onSearch: Function

@@ -1,4 +1,4 @@
-import Axios from "axios";
+import Axios from 'axios';
 
 const API_URL = 'https://api.themoviedb.org/3';
 const MOVIE_DETAIL_PATH = 'movie';
