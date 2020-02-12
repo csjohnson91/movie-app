@@ -13,7 +13,7 @@ type DetailBackdrop = {
 const DetailBackdrop = ({ height, src, alt }: DetailBackdrop) => {
 
   const imageStyle: CSSProperties = {
-    opacity: '50%',
+    opacity: 0.5,
     height: height,
     overflow: 'hidden'
   };

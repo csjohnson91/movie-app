@@ -1,7 +1,7 @@
 .overview-row-border {
-    margin-top: 2.2rem;
+    margin-top: 3rem;
     border-top: 1px solid #e3f4fc;
-    opacity: 25%;
+    opacity: 0.25;
 }
 
 .overview-heading {
@@ -30,14 +30,16 @@
 }
 
 .title {
+    padding-left: 1rem;
     text-align: left;
     font-size: xx-large;
     font-weight: bold;
 }
 
 .info {
+    padding-left: 1rem;
     font-size: small;
-    opacity: 75%;
+    opacity: 0.75;
 }
 
 .runtime {
